@@ -1,6 +1,7 @@
 import TrussSolver as ts
 import numpy as np
 
+# These are gonna be the x and y coordinates of each joint
 nodes = np.array([
     [0,0],      #0
     [4,0],      #1
@@ -14,6 +15,7 @@ nodes = np.array([
     [12,8]      #9
 ], dtype=object)
 
+# This is gonna model the relationship between joint indicies
 connections = np.array([
     [1,2,3],        #0
     [0,3],          #1
@@ -27,13 +29,18 @@ connections = np.array([
     [7,8]           #9
 ],dtype=object)
 
+# Actually creating the truss
 truss1 = ts.Truss(nodes, connections)
 
+# Adding test loads
 truss1.addLoad(0,[-60,-280])
 truss1.addLoad(1,[0,360])
 truss1.addLoad(9,[60,-80])
+
+# Solving the truss
 truss1.solve()
 
+# Printing out an image of the truss
 trussdraw = ts.PgTruss(truss1,800)
 trussdraw.drawNodes()
 
