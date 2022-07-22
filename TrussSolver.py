@@ -33,7 +33,7 @@ class Truss:
         self.F = np.zeros(len(self.bars))
 
         for i in range(2*N):
-            if (i%2 == 0): #El indice de nodo es par por lo tanto se trata de la suma en x
+            if (i%2 == 0):
                 iNode = int(i/2)
                 for iForce in range(nForces):
                     if iNode in self.bars[iForce]:
@@ -43,7 +43,7 @@ class Truss:
                         self.G[i,iForce] = self.c(iNode,j)
                     else:
                         self.G[i,iForce] = 0
-            else : #El indice de nodo es impar por lo tanto se trata de la suma en y
+            else :
                 iNode = int((i-1)/2) 
                 for iForce in range(nForces):
                     if iNode in self.bars[iForce]:
