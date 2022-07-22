@@ -1,3 +1,5 @@
+import graphs
+
 # Tension will be +ve and Compression -ve
 MAX_TENSION = 12000
 MAX_COMPRESSION = -8000
