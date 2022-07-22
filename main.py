@@ -40,4 +40,5 @@ trussdraw.drawNodes()
 """
 Blue is compression
 Red is tension
+Y'all might have to download the dependancies which are numpy and pygame
 """
